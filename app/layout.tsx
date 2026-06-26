@@ -24,7 +24,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-ink text-text font-body antialiased">
+      <body className="bg-[#F8F9FA] text-ink font-body antialiased">
         <Nav />
         {children}
         <Footer />

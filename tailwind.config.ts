@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0B1116",
-        panel: "#131B22",
-        panel2: "#0F161C",
-        border: "#232E37",
+        ink: "#0F1923",
+        panel: "#F0F4F8",
+        panel2: "#E8EDF3",
+        border: "#E2E8F0",
         amber: "#D97B29",
         amberDim: "#8A5420",
         signal: "#4F9D69",
-        text: "#E8EDF1",
-        muted: "#7C8A94",
+        text: "#0F1923",
+        muted: "#64748B",
       },
       fontFamily: {
         display: ["var(--font-display)"],

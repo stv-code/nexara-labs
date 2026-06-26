@@ -59,7 +59,7 @@ export default function Government() {
           <p className="label text-xs text-muted">Section 2 — Compliance &amp; certification</p>
           <div className="mt-6 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
             {compliance.map((c) => (
-              <div key={c.code} className="flex items-center justify-between bg-ink p-5">
+              <div key={c.code} className="flex items-center justify-between bg-white p-5">
                 <div>
                   <p className="font-mono text-[11px] text-muted">{c.code}</p>
                   <p className="mt-1 text-sm text-text">{c.label}</p>

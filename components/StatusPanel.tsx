@@ -14,7 +14,7 @@ const nodes: Node[] = [
 
 export default function StatusPanel() {
   return (
-    <div className="border border-border bg-panel/60">
+    <div className="border border-border bg-white">
       <div className="flex items-center justify-between border-b border-border px-5 py-3">
         <p className="label text-xs text-muted">System Status</p>
         <p className="label text-xs text-muted">Nairobi, KE</p>

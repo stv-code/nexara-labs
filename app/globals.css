@@ -14,15 +14,15 @@ html {
 
 body {
   background-image:
-    linear-gradient(rgba(232, 237, 241, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 237, 241, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(15, 25, 35, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 25, 35, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
   background-position: -1px -1px;
 }
 
 ::selection {
   background: #D97B29;
-  color: #0B1116;
+  color: #0F1923;
 }
 
 :focus-visible {

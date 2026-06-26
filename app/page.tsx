@@ -26,7 +26,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/government"
-                className="border border-border px-5 py-3 text-sm text-text transition-colors hover:border-amber/60"
+                className="border border-border px-5 py-3 text-sm text-ink transition-colors hover:border-amber/60"
               >
                 Capability statement →
               </Link>
@@ -71,7 +71,7 @@ export default function Home() {
                 body: "AGPO-certified ICT supplier. Capability statement, compliance documentation, and systems integration for public sector engagement.",
               },
             ].map((s) => (
-              <div key={s.code} className="bg-ink p-7">
+              <div key={s.code} className="bg-white p-7">
                 <span className="font-mono text-xs text-amber">{s.code}</span>
                 <h3 className="mt-4 font-display text-lg font-medium">{s.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{s.body}</p>
@@ -97,7 +97,7 @@ export default function Home() {
             </div>
             <Link
               href="/portfolio"
-              className="label shrink-0 border border-border px-4 py-2 text-xs text-text hover:border-amber/60"
+              className="label shrink-0 border border-border px-4 py-2 text-xs text-ink hover:border-amber/60"
             >
               See full portfolio →
             </Link>

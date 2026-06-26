@@ -20,7 +20,7 @@ export default function Contact() {
             href="https://wa.me/254700000000"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-ink p-7 transition-colors hover:bg-panel"
+            className="group bg-white p-7 transition-colors hover:bg-panel"
           >
             <span className="font-mono text-xs text-signal">PREFERRED</span>
             <h3 className="mt-3 font-display text-lg font-medium">WhatsApp</h3>
@@ -34,7 +34,7 @@ export default function Contact() {
 
           <a
             href="mailto:hello@nexaralabs.co.ke"
-            className="group bg-ink p-7 transition-colors hover:bg-panel"
+            className="group bg-white p-7 transition-colors hover:bg-panel"
           >
             <span className="font-mono text-xs text-muted">EMAIL</span>
             <h3 className="mt-3 font-display text-lg font-medium">General inquiries</h3>
@@ -46,7 +46,7 @@ export default function Contact() {
 
           <a
             href="/government"
-            className="group bg-ink p-7 transition-colors hover:bg-panel"
+            className="group bg-white p-7 transition-colors hover:bg-panel"
           >
             <span className="font-mono text-xs text-amber">GOVERNMENT</span>
             <h3 className="mt-3 font-display text-lg font-medium">Tenders & procurement</h3>

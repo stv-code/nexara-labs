@@ -72,7 +72,7 @@ export default function Services() {
                 <p className="max-w-xl text-sm leading-relaxed text-muted">{s.body}</p>
                 <ul className="mt-5 grid gap-2 sm:grid-cols-2">
                   {s.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-text">
+                    <li key={item} className="flex items-start gap-2 text-sm text-ink">
                       <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-amber" />
                       {item}
                     </li>

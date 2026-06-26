@@ -49,7 +49,7 @@ export default function Portfolio() {
       <section>
         <div className="mx-auto grid max-w-6xl gap-px overflow-hidden border border-border bg-border px-0 md:grid-cols-2">
           {projects.map((p) => (
-            <div key={p.code} className="bg-ink p-7">
+            <div key={p.code} className="bg-white p-7">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs text-amber">{p.code}</span>
                 {p.link ? (
