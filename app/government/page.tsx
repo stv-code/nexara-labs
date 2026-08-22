@@ -82,7 +82,7 @@ export default function Government() {
           <div className="mt-6 border border-border p-7">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h3 className="font-display text-lg font-medium">
-                Biketi &amp; Company Advocates
+                Legal Practice Digital Infrastructure
               </h3>
               <span className="font-mono text-[11px] text-muted">REF: NXL-PP-001</span>
             </div>

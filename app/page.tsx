@@ -88,7 +88,7 @@ export default function Home() {
           <div className="mt-5 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <h3 className="font-display text-xl font-medium">
-                Biketi &amp; Company Advocates
+                Legal Practice Digital Infrastructure
               </h3>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
                 Domain registration, web hosting, and Google Workspace deployment
