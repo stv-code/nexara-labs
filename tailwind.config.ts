@@ -9,23 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0F1923",
-        panel: "#F0F4F8",
-        panel2: "#E8EDF3",
-        border: "#E2E8F0",
-        amber: "#D97B29",
-        amberDim: "#8A5420",
-        signal: "#4F9D69",
-        text: "#0F1923",
-        muted: "#64748B",
+        paper: "#F8F9FA",
+        ink: "#141414",
+        amber: "#E0A028",
+        background: "#F8F9FA",
+        foreground: "#141414",
+        card: "#FFFFFF",
+        secondary: "#F0F1F2",
+        border: "rgb(20 20 20 / 10%)",
+        muted: "#F0F1F2",
+        "muted-foreground": "#6B7280",
+      },
+      borderRadius: {
+        DEFAULT: "0",
+        sm: "0",
+        md: "0",
+        lg: "0",
+        xl: "0",
       },
       fontFamily: {
         display: ["var(--font-display)"],
         body: ["var(--font-body)"],
-        mono: ["var(--font-mono)"],
+        sans: ["var(--font-body)"],
       },
     },
   },
   plugins: [],
 };
+
 export default config;

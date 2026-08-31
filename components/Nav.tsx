@@ -8,6 +8,7 @@ const links = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
+  { href: "/government", label: "Gov" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -16,68 +17,51 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3 font-display text-lg font-semibold tracking-tight">
-          <span className="flex h-7 w-7 items-center justify-center border border-amber/60 text-xs font-mono text-amber">
-            N
-          </span>
-          Nexara Labs
+    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+        <Link href="/" className="font-display text-2xl font-extrabold tracking-tight">
+          NEXARA<span className="text-amber">LABS</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
+        <nav className="hidden gap-10 text-[13px] font-semibold uppercase tracking-widest text-muted-foreground md:flex">
+          {links.map((link) => (
             <Link
-              key={l.href}
-              href={l.href}
-              className={`text-sm transition-colors hover:text-text ${
-                pathname === l.href ? "text-text" : "text-muted"
+              key={link.href}
+              href={link.href}
+              className={`transition-colors hover:text-amber ${
+                pathname === link.href ? "text-foreground" : "text-muted-foreground"
               }`}
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
-          <Link
-            href="/government"
-            className="label flex items-center gap-2 border border-border px-3 py-1.5 text-xs text-muted transition-colors hover:border-amber/60 hover:text-amber"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-            Government
-          </Link>
         </nav>
 
         <button
-          className="flex flex-col gap-1.5 md:hidden"
+          type="button"
+          onClick={() => setOpen((value) => !value)}
           aria-label="Toggle menu"
           aria-expanded={open}
-          onClick={() => setOpen(!open)}
+          className="flex flex-col gap-1.5 md:hidden"
         >
-          <span className={`h-px w-6 bg-text transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
-          <span className={`h-px w-6 bg-text transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`h-px w-6 bg-text transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
+          <span className={`h-px w-6 bg-foreground transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
+          <span className={`h-px w-6 bg-foreground transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span className={`h-px w-6 bg-foreground transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
         </button>
       </div>
 
       {open && (
         <nav className="flex flex-col border-t border-border px-6 py-4 md:hidden">
-          {links.map((l) => (
+          {links.map((link) => (
             <Link
-              key={l.href}
-              href={l.href}
+              key={link.href}
+              href={link.href}
               onClick={() => setOpen(false)}
-              className="border-b border-border/60 py-3 text-sm text-muted last:border-none hover:text-text"
+              className="py-3 text-[13px] font-semibold uppercase tracking-widest text-muted-foreground hover:text-amber"
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
-          <Link
-            href="/government"
-            onClick={() => setOpen(false)}
-            className="label flex items-center gap-2 py-3 text-xs text-amber"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-            Government &amp; Procurement
-          </Link>
         </nav>
       )}
     </header>

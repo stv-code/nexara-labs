@@ -1,127 +1,173 @@
+import Image from "next/image";
 import Link from "next/link";
-import StatusPanel from "@/components/StatusPanel";
+
+const services = [
+  {
+    n: "01",
+    title: "Web & application development",
+    body: "Custom platforms built on Next.js and Supabase, from public-facing sites to multi-role portals with admin tooling.",
+  },
+  {
+    n: "02",
+    title: "Hosting, domains & Workspace",
+    body: "Domain registration, managed hosting, DNS, and Google Workspace setup and migration for teams and institutions.",
+  },
+  {
+    n: "03",
+    title: "Security consulting",
+    body: "Vulnerability assessment, secure configuration review, and practical hardening grounded in a cybersecurity background, not generic checklists.",
+  },
+  {
+    n: "04",
+    title: "Government & procurement systems",
+    body: "AGPO-certified ICT supplier. Capability statement, compliance documentation, and systems integration for public sector engagement.",
+  },
+];
+
+const status = [
+  { code: "01 / WEB", label: "Web & application development", state: "Operational" },
+  { code: "02 / INF", label: "Hosting, domains & Workspace", state: "Operational" },
+  { code: "03 / SEC", label: "Security consulting & assessments", state: "Operational" },
+  { code: "04 / GOV", label: "Government procurement", state: "AGPO Certified", strong: true },
+];
 
 export default function Home() {
   return (
     <main>
-      {/* Hero */}
-      <section className="border-b border-border">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:py-28">
-          <div>
-            <p className="label text-xs text-amber">Nairobi · ICT &amp; Digital Systems</p>
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-              Infrastructure and software for institutions that can&apos;t afford downtime.
-            </h1>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted">
-              Nexara Labs builds and maintains the systems behind organizations:
-              web platforms, hosting and domains, Workspace deployments, and
-              security assessments. AGPO-certified for government engagement.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/services"
-                className="bg-amber px-5 py-3 text-sm font-medium text-ink transition-colors hover:bg-amber/90"
-              >
-                View services
-              </Link>
-              <Link
-                href="/government"
-                className="border border-border px-5 py-3 text-sm text-ink transition-colors hover:border-amber/60"
-              >
-                Capability statement →
-              </Link>
-            </div>
+      <section className="grid min-h-[85vh] grid-cols-1 border-b border-border md:grid-cols-2">
+        <div className="flex flex-col justify-center border-b border-border p-8 md:border-b-0 md:border-r md:p-20">
+          <div className="mb-8 inline-block w-fit border border-border bg-secondary px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em]">
+            Nairobi / ICT &amp; Digital Systems
           </div>
-
-          <div className="md:pt-8">
-            <StatusPanel />
-          </div>
-        </div>
-      </section>
-
-      {/* What we do */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="flex items-baseline justify-between">
-            <h2 className="font-display text-2xl font-semibold">What we do</h2>
-            <Link href="/services" className="label text-xs text-amber hover:underline">
-              All services →
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2">
-            {[
-              {
-                code: "01",
-                title: "Web & application development",
-                body: "Custom platforms built on Next.js and Supabase, from public-facing sites to multi-role portals with admin tooling.",
-              },
-              {
-                code: "02",
-                title: "Hosting, domains & Workspace",
-                body: "Domain registration, managed hosting, DNS, and Google Workspace setup and migration for teams and institutions.",
-              },
-              {
-                code: "03",
-                title: "Security consulting",
-                body: "Vulnerability assessment, secure configuration review, and practical hardening grounded in a cybersecurity background, not generic checklists.",
-              },
-              {
-                code: "04",
-                title: "Government & procurement systems",
-                body: "AGPO-certified ICT supplier. Capability statement, compliance documentation, and systems integration for public sector engagement.",
-              },
-            ].map((s) => (
-              <div key={s.code} className="bg-white p-7">
-                <span className="font-mono text-xs text-amber">{s.code}</span>
-                <h3 className="mt-4 font-display text-lg font-medium">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{s.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Past performance strip */}
-      <section className="border-b border-border bg-panel2">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="label text-xs text-muted">Recent engagement</p>
-          <div className="mt-5 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h3 className="font-display text-xl font-medium">
-                Legal Practice Digital Infrastructure
-              </h3>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
-                Domain registration, web hosting, and Google Workspace deployment
-                for a Nairobi legal practice, delivered end to end.
-              </p>
-            </div>
+          <h1 className="mb-8 font-display text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl">
+            Infrastructure and software for institutions that{" "}
+            <span className="text-amber">can&apos;t afford</span> downtime.
+          </h1>
+          <p className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            Nexara Labs builds and maintains the systems behind organizations: web platforms,
+            hosting and domains, Workspace deployments, and security assessments. AGPO-certified
+            for government engagement.
+          </p>
+          <div className="flex flex-wrap gap-4">
             <Link
-              href="/portfolio"
-              className="label shrink-0 border border-border px-4 py-2 text-xs text-ink hover:border-amber/60"
+              href="/services"
+              className="bg-amber px-8 py-4 text-[14px] font-bold uppercase tracking-wider text-ink transition-all hover:bg-ink hover:text-paper"
             >
-              See full portfolio →
+              View services
             </Link>
+            <Link
+              href="/government"
+              className="inline-flex items-center gap-2 border border-foreground px-8 py-4 text-[14px] font-bold uppercase tracking-wider transition-all hover:bg-secondary"
+            >
+              Capability statement <span aria-hidden>-&gt;</span>
+            </Link>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center bg-secondary/60 p-8 md:p-20">
+          <div className="border border-border bg-card p-8 shadow-sm">
+            <div className="mb-8 flex items-center justify-between border-b border-border pb-4">
+              <h2 className="font-display text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                System status
+              </h2>
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                  Nairobi, KE
+                </span>
+                <span className="size-2 animate-pulse rounded-full bg-amber" />
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {status.map((row) => (
+                <div key={row.code} className="flex items-center justify-between gap-4">
+                  <div>
+                    <span className="block text-[10px] font-bold uppercase tracking-tight text-muted-foreground">
+                      {row.code}
+                    </span>
+                    <span className="font-display text-base md:text-lg">{row.label}</span>
+                  </div>
+                  <span
+                    className={
+                      row.strong
+                        ? "shrink-0 border border-ink bg-ink px-2 py-1 text-[11px] font-bold uppercase text-paper"
+                        : "shrink-0 border border-amber/20 bg-amber/10 px-2 py-1 text-[11px] font-bold uppercase text-amber"
+                    }
+                  >
+                    {row.state}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section>
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-20 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 className="font-display text-2xl font-semibold">
+      <section className="border-b border-border px-6 py-24 md:px-20">
+        <div className="mb-16 flex items-baseline justify-between gap-6">
+          <h2 className="font-display text-3xl font-extrabold tracking-tight">What we do</h2>
+          <Link href="/services" className="label text-muted-foreground transition-colors hover:text-amber">
+            All services -&gt;
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
+          {services.map((service) => (
+            <div key={service.n} className="space-y-4">
+              <span className="font-display text-4xl font-bold text-amber/20">{service.n}</span>
+              <h3 className="font-display text-xl font-bold">{service.title}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">{service.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-2">
+        <div className="border-b border-border p-12 md:border-b-0 md:border-r md:p-24">
+          <h2 className="mb-12 text-[11px] font-bold uppercase tracking-[0.3em] text-muted-foreground">
+            Recent engagement
+          </h2>
+          <Image
+            src="/engagement-legal-practice.jpg"
+            alt="Interior of a Nairobi legal practice office"
+            width={1024}
+            height={1024}
+            className="mb-8 aspect-square w-full border border-border object-cover grayscale"
+          />
+          <h3 className="mb-4 font-display text-3xl font-bold">
+            Legal Practice Digital Infrastructure
+          </h3>
+          <p className="max-w-md text-muted-foreground">
+            Domain registration, web hosting, and Google Workspace deployment for a Nairobi legal
+            practice, delivered end to end.
+          </p>
+          <Link href="/portfolio" className="label mt-8 inline-block text-muted-foreground transition-colors hover:text-amber">
+            See full portfolio -&gt;
+          </Link>
+        </div>
+
+        <div className="flex flex-col items-center justify-center p-12 text-center md:p-24">
+          <div className="max-w-md">
+            <h2 className="mb-8 font-display text-4xl font-bold">
               Have a system that needs building or fixing?
             </h2>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mb-10 text-muted-foreground">
               Most inquiries start on WhatsApp. Tell us what you&apos;re working with.
             </p>
+            <div className="space-y-4">
+              <Link
+                href="/contact"
+                className="block w-full bg-ink py-5 text-[13px] font-bold uppercase tracking-widest text-paper transition-colors hover:bg-amber hover:text-ink"
+              >
+                Get in touch
+              </Link>
+              <a
+                href="mailto:hello@nexaralabs.co.ke"
+                className="block w-full border border-foreground py-5 text-[13px] font-bold uppercase tracking-widest transition-colors hover:bg-secondary"
+              >
+                hello@nexaralabs.co.ke
+              </a>
+            </div>
           </div>
-          <Link
-            href="/contact"
-            className="shrink-0 bg-amber px-6 py-3 text-sm font-medium text-ink hover:bg-amber/90"
-          >
-            Get in touch
-          </Link>
         </div>
       </section>
     </main>
